@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuj Sharma - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 5px solid #667eea;
+            object-fit: cover;
+        }
+
+        .header-content h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header-content p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .education, .experience-item, .project-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3, .project-item h3, .education h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .company, .education .university {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .duration, .education .duration {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul, .project-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li, .project-item li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-item li:before, .project-item li:before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .achievements h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header-content h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <img src="PFP-Resume.jpg" alt="Anuj Sharma" class="profile-img">
+            <div class="header-content">
+                <h1>Anuj Sharma</h1>
+                <p>Analytical and detail-oriented professional with a strong ability to interpret data, identify trends, and translate insights into actionable business strategies. Adept at bridging the gap between technical problem-solving and business objectives.</p>
+                <div class="contact-info">
+                    <a href="mailto:anujatwork7@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/anujatwork/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/anujjjz" target="_blank">GitHub</a>
+                    <a href="tel:930241176">Phone</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section fade-in">
+            <h2>Education</h2>
+            <div class="education">
+                <h3>Bachelor of Technology in Computer Science (AI)</h3>
+                <div class="university">Medi-Caps University, Indore</div>
+                <div class="duration">2021 – 2025</div>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>AI/Data Science Intern</h3>
+                <div class="company">Deepiotics Pvt. Ltd, Indore</div>
+                <ul>
+                    <li>Collaborated with clients to understand requirements and suggest innovative AI-driven solutions to enhance product capabilities</li>
+                    <li>Developed and tested data-driven models to extract insights, optimize performance, and support decision-making</li>
+                    <li>Preprocessed, analyzed, and visualized datasets to identify trends, patterns, and improvement opportunities</li>
+                    <li>Assisted in integrating machine learning models into product workflows for greater efficiency and impact</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Data Analytics</h3>
+                <div class="company">Medoc Health IT Pvt Ltd, Indore</div>
+                <ul>
+                    <li>Worked on insurance claim prediction models to identify potential claim outcomes and improve decision-making accuracy</li>
+                    <li>Developed and maintained interactive Power BI dashboards to visualize key metrics and trends for business stakeholders</li>
+                    <li>Conducted data cleaning, transformation, and analysis to ensure data accuracy and reliability</li>
+                    <li>Collaborated with the analytics team to translate findings into actionable business insights</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>UI/UX Intern</h3>
+                <div class="company">Externship, Indore</div>
+                <ul>
+                    <li>Created wireframes and interactive prototypes to visualize user flows and improve product design clarity</li>
+                    <li>Collaborated with designers and developers to translate business requirements into intuitive and user-friendly interfaces</li>
+                    <li>Conducted design iterations based on feedback to enhance usability and user experience</li>
+                    <li>Assisted in preparing design documentation and maintaining consistency across screens and components</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <h2>Featured Project</h2>
+            <div class="project-item">
+                <h3>Diabetes Prediction Web Application</h3>
+                <ul>
+                    <li>Developed a full-stack web application using Python and Flask to predict the onset of diabetes based on key health indicators</li>
+                    <li>Engineered and trained a Decision Tree machine learning model with Scikit-learn, achieving 97% accuracy on the PIMA Indians Diabetes Dataset</li>
+                    <li>Created a user-friendly interface with HTML and CSS, and integrated the trained model into the Flask backend to serve real-time predictions</li>
+                    <li>Utilized Pandas and NumPy for data preprocessing and feature engineering, and serialized the final model using Pickle for deployment</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section fade-in">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Design Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Wix</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Design Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">UX Research</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h3>🏆 Achievements & Community Involvement</h3>
+                <p><strong>NPTEL Certificate:</strong> Computer Vision And Image Processing</p>
+                <p><strong>Hachive Hackathon:</strong> Participated in 36-hour Pan-India Hackathon – developed a mutual fund suggestion application to assist users in making data-driven investment decisions</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling and animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
